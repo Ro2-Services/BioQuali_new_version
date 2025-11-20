@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioQuali | Laboratoire de Biotechnologie & Analyses Médicales - Bénin</title>
+    <title>BioQuali | Laboratoire de Biotechnologie & Analyses Médicales</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
