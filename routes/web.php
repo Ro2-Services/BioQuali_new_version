@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\AdminProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +20,37 @@ Route::get('/index', [FrontendController::class, 'index'])->name('index');
 Route::get('/realisation', [FrontendController::class, 'realisation'])->name('realisation');
 Route::get('/services', [FrontendController::class, 'services'])->name('services');
 Route::get('/skill', [FrontendController::class, 'skill'])->name('skill');
-
 Route::get('/tests', [FrontendController::class, 'tests'])->name('tests');
+
+
+
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/products/index', [AdminProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [AdminProductController::class, 'create'])->name('products.create');
+    Route::post('/products/store', [AdminProductController::class, 'store'])->name('products.store');
+    Route::get('/products/show/{product}', [AdminProductController::class, 'show'])->name('products.show');
+    Route::get('/products/{product}/edit', [AdminProductController::class, 'edit'])->name('products.edit');
+    Route::put('/products/update/{product}', [AdminProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/destroy/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
+});
+
+
+
+
+// Route::prefix('admin')->middleware('auth')->group(function {
+//     Route::get('/products/index', [AdminProductController::class, 'index'])->name('products.index');
+//     Route::get('/products/create', [AdminProductController::class, 'create'])->name('products.create');
+//     Route::post('/products/store', [AdminProductController::class, 'store'])->name('products.store');
+//     Route::get('/products/show/{product}', [AdminProductController::class, 'show'])->name('products.show');
+//     Route::get('/products/{product}/edit', [AdminProductController::class, 'edit'])->name('products.edit');
+//     Route::put('/products/update/{product}', [AdminProductController::class, 'update'])->name('products.update');
+//     Route::delete('/products/destroy/{product}', [AdminProductController::class, 'destroy'])->name('products.destroy');
+
+// });
+
+
+
 
 
 

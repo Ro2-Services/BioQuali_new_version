@@ -24,6 +24,13 @@ BioQuali | Laboratoire de Biotechnologie & Analyses Médicales - Bénin
         </div>
     </div>
 
+   {{-- {{ $product->name }}
+    {{ $product->price }}
+    {{ $product->description }}
+    {{ $product->category->name }} --}}
+
+
+
     <!-- Main Content -->
     <div class="relative z-10 container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
